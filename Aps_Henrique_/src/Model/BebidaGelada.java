@@ -1,24 +1,30 @@
 
 package Model;
 
+import javax.swing.JOptionPane;
+
 
 public class BebidaGelada extends Produto {
     
-     public double mls;
+     public double ml;
    
-     //criar atributo de subclasse
     public BebidaGelada() {
         super();
     
     }
     
-    public BebidaGelada(int id, String nome, int quantidade, double preco, double mls) {
+    public BebidaGelada(int id, String nome, int quantidade, double preco, double ml) {
         super(id, nome, quantidade, preco);
-        this.mls = mls;
+        this.ml = ml;
     }
     
-   //criar método mostrar( 
     
+    @Override
     
-    
+   public void Dados(){
+          
+      String texto ="\nId:"+this.id+"\nNome :\n"+this.nome+"\nQuantidade:\n:"+this.quantidade+"\nPreco:\n"+this.getPreco()+"\n"+this.ml+"\nLitros\n";
+       JOptionPane.showMessageDialog(null,texto);     
+     
+    }
 }
