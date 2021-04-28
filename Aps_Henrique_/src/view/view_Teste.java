@@ -1,11 +1,14 @@
 
 package view;
 
+import javax.swing.JOptionPane;
 import Model.BebidaGelada;
 import Model.Cigarro;
 import Model.Lanche;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+
+
 
 
 public class view_Teste {
@@ -67,11 +70,28 @@ public class view_Teste {
             l.Dados();
 //            System.out.println("Lanche [1]: " + l);
         });
+
+        
+       ArrayList<String> lista = new ArrayList<String>();
+			
+                lista.add("Escolha a opção");
+		lista.add("Coca - Cola");
+		lista.add("Fanta");
+		lista.add("Pepsi");
+		
+		String nomes = "";
+		for(String nome : lista){
+			nomes += nome+"\n";
+		}
+		JOptionPane.showMessageDialog(null, nomes);
+	
+        
+
         BebidaGelada bg = new BebidaGelada (3, "Coca Cola", 5, 6.50,3);
         bg.Dados();
         
         
-    
+   
         
        
         
@@ -81,6 +101,9 @@ public class view_Teste {
 
 
 
+
+    
+    
 
 
  //inserir produtos
