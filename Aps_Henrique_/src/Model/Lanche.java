@@ -20,14 +20,26 @@ public class Lanche extends Produto {
         this.salgado = salgado;
         
     }
+
+    public Lanche(int id, String nome) {
+        this.id =id;
+        this.nome=nome;
+       
+    }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
     
-    
+   
+
+
     
     @Override
-    
       public void Dados(){
           
-       String texto ="\nId:"+this.id+"\nNome :\n"+this.nome+"\nQuantidade:\n"+this.quantidade+"\nPreco\n"+this.getPreco()+"\nLanche ==> qualidade:\n"+this.salgado;
+       String texto ="\nPreco\n"+this.getPreco()+"\nLanche+ ==> qualidade:\n"+"\nId:"+this.id+"\nNome :\n"+this.nome+"\nQuantidade:\n"+this.quantidade+this.salgado;
         JOptionPane.showMessageDialog(null,texto);  
     }
    

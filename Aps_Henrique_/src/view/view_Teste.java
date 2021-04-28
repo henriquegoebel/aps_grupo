@@ -4,14 +4,15 @@ package view;
 import Model.BebidaGelada;
 import Model.Cigarro;
 import Model.Lanche;
-import Model.Produto;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class view_Teste {
 
     
     public static void main(String[] args) {
         
-        Produto prod = new Produto(0, null, 0, 0);
         
         Lanche p = new Lanche(1, "Hot dog", 9, 8.50,"salgado");
         p.Dados();
@@ -21,11 +22,65 @@ public class view_Teste {
         Cigarro pp = new Cigarro (2, "Cigarro", 12, 10.50,"Free");
         pp.Dados();
         
-        BebidaGelada bg = new BebidaGelada (3, "Refrigerante", 5, 6.50,3);
+        
+        
+   List<Lanche> lanches = new ArrayList<Lanche>();
+        
+        Lanche l1 = new Lanche(1, "Xis frango");
+        Lanche l2 = new Lanche(2, "Xis carne");
+        Lanche l3 = new Lanche(3, "Xis calabresa");
+        Lanche l4 = new Lanche(4, "Xis bacon");
+        Lanche l5= new Lanche(5, "Xis salada");
+        
+        lanches.add(l1);
+        lanches.add(l2);
+        lanches.add(l3);
+        lanches.add(l4);
+        lanches.add(l5);
+        /*
+        */
+        List<BebidaGelada> bebidas = new ArrayList<BebidaGelada> ();
+        
+        BebidaGelada b1 = new BebidaGelada(1, "Coca-Cola");
+        BebidaGelada b2 = new BebidaGelada(2, "Coca-Cola Zero");
+        BebidaGelada b3 = new BebidaGelada(3, "Guaraná");
+        BebidaGelada b4 = new BebidaGelada(4, "Fanta Lranja");
+      
+        bebidas.add(b1);
+        bebidas.add(b2);
+        bebidas.add(b3);
+        bebidas.add(b4);
+        
+        System.out.println(bebidas);
+        //
+        //
+        //
+        bebidas.forEach(b -> {
+            b.Dados ();
+        });
+       
+        
+        System.out.println(lanches);
+        //
+        //
+        lanches.forEach(l -> {
+            l.Dados();
+//            System.out.println("Lanche [1]: " + l);
+        });
+        BebidaGelada bg = new BebidaGelada (3, "Coca Cola", 5, 6.50,3);
         bg.Dados();
+        
+        
     
+        
+       
+        
     }
 }
+    
+
+
+
 
 
  //inserir produtos
