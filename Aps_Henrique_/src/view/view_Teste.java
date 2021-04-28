@@ -7,8 +7,7 @@ import Model.Cigarro;
 import Model.Lanche;
 import java.util.List;
 import java.util.ArrayList;
-
-
+import Model.Pizza;
 
 
 public class view_Teste {
@@ -87,13 +86,6 @@ public class view_Teste {
 	
         
 
-        BebidaGelada bg = new BebidaGelada (3, "Coca Cola", 5, 6.50,3);
-        bg.Dados();
-        
-        
-   
-        
-       
         
     }
 }
