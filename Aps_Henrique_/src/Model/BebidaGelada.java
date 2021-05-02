@@ -7,62 +7,73 @@ import javax.swing.JOptionPane;
 
 public class BebidaGelada extends Produto {
     
-     public double ml;
-    private String BebidaGelada;
+    public double mls;
+    
    
     public BebidaGelada() {
         super();
     
     }
     
-    public BebidaGelada(int id, String nome, int quantidade, double preco, double ml) {
+    public BebidaGelada(int id, String nome, int quantidade, double preco, double mls) {
         super(id, nome, quantidade, preco);
        
-        this.ml = ml;
+        this.mls = mls;
         
     }
 
-    public BebidaGelada(int id, String BebidaGelada) {
-      
-        this.BebidaGelada = BebidaGelada;
+
+    @Override
+    public void cadastrar() {
+        
     }
-    public class ListaBebida{
 
-        private String ml;
-        private String id;
-        private String nome;
-        private String quantidade;
+    @Override
+    public void imprimir() {
+        System.out.println("\nNome: " + this.nome + 
+                "\nPreço: " + this.preco +
+                "\nQuantidade: " + this.getQuantidade() +
+                "\nMililitros: " + this.mls);
+        
+    }
 
-        /**
-         *
-         * @param args
-         */
-  
-  }
-    
-  
-    
-    
-    
-    
-   
+    @Override
+    public void excluir() {
+           this.zerarEstoque();
+           System.out.println("Bebida Gelada excluída:" + nome);
+    }
+
+    @Override
+    protected void zerarEstoque() {
+        this.setQuantidade(0);
+
+    }
     
     @Override
     public String toString() {
         return nome;
     }
-    
-
   
 
-
-   public void Dados(){ 
-        String texto ="\nId:"+this.id+"\nNome :\n"+this.nome+"\nQuantidade:\n:"+this.quantidade+"\nPreco:\n"+this.getPreco()+"\n"+this.ml+"\nLitros\n";
-       JOptionPane.showMessageDialog(null,texto);     
+    @Override
+    public String Dados(){ 
+        System.out.println("\nNome: " + this.nome + 
+                "\nPreço: " + this.preco +
+                "\nQuantidade: " + this.getQuantidade() +
+                "\nMililitros: " + this.mls);
+            return "";
      
+    }
+
+    public double getMls() {
+        return mls;
+    }
+
+    public void setMls(double mls) {
+        this.mls = mls;
     }
        
         
               
         
-    }
+}

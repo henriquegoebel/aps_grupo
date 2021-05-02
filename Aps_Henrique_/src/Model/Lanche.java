@@ -6,15 +6,15 @@ import javax.swing.JOptionPane;
 
 public class Lanche extends Produto {
     
-    public String salgado;
+    public boolean salgado;
  
     
-     public Lanche() {
+    public Lanche() {
         super();
     
     }
     
-    public Lanche(int id, String nome, int quantidade, double preco,String salgado) {
+    public Lanche(int id, String nome, int quantidade, double preco,boolean salgado) {
         super(id, nome, quantidade, preco);
        
         this.salgado = salgado;
@@ -32,15 +32,49 @@ public class Lanche extends Produto {
         return nome;
     }
     
-   
-
-
     
     @Override
-      public void Dados(){
-          
-       String texto ="\nPreco\n"+this.getPreco()+"\nLanche+ ==> qualidade:\n"+"\nId:"+this.id+"\nNome :\n"+this.nome+"\nQuantidade:\n"+this.quantidade+this.salgado;
-        JOptionPane.showMessageDialog(null,texto);  
+    public String Dados(){
+            System.out.println("\nNome: " + this.nome + 
+                "\nPreço: " + this.preco +
+                "\nQuantidade: " + this.getQuantidade() +
+                "\nSalgado? " + this.salgado);
+            return "";
+    }
+
+    @Override
+    public void cadastrar() {
+    
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println("\nNome: " + this.nome + 
+                "\nPreço: " + this.preco +
+                "\nQuantidade: " + this.getQuantidade() +
+                "\nSalgado? " + this.salgado);        
+
+    }
+
+    @Override
+    public void excluir() {
+        this.zerarEstoque();
+        System.out.println("Lanche excluído:" + nome);
+
+    }
+
+    @Override
+    protected void zerarEstoque() {
+        this.setQuantidade(0);
+        
+    }
+
+    public boolean isSalgado() {
+        return salgado;
+    }
+
+    public void setSalgado(boolean salgado) {
+        this.salgado = salgado;
     }
    
     
